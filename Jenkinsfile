@@ -6,14 +6,15 @@ pipeline {
         AWS_ACCESS_KEY_ID=credentials('my-aws-access-key-id')
     }
     stages {
-        stage('Terraform Init') {
+        stage('Terraform Check') {
             steps {
                 sh 'terraform init'
+                sh 'terraform plan'
             }
         }
-        stage('Terraform Plan') {
+        stage('User Validation') {
             steps {
-                sh 'terraform plan'
+                sh 'whoami'
             }
         }
     }
