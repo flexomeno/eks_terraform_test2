@@ -12,7 +12,7 @@ pipeline {
                 sh 'terraform plan'
             }
         }
-        stage('User Validation') {
+        stage('User Validation WHO AM I') {
             steps {
                 sh 'whoami'
             }
