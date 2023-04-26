@@ -14,12 +14,12 @@ pipeline {
                 }
             }
         }
-        stage('Cluster deployment') {
-            steps {
-                dir('cluster_eks'){
-                    sh 'terraform apply -auto-approve'
-                }
-            }
-        }
+        // stage('Cluster deployment') {
+        //     steps {
+        //         dir('cluster_eks'){
+        //             sh 'terraform apply -auto-approve'
+        //         }
+        //     }
+        // }
     }
 }
