@@ -8,10 +8,11 @@ pipeline {
     stages {
         stage('Terraform Check') {
             steps {
-                dir('cluster_eks')
+                dir('cluster_eks') {
                     // sh 'terraform init'
                     // sh 'terraform plan'
                     sh 'pwd'
+                }
             }
         }
         // stage('Cluster deployment') {
