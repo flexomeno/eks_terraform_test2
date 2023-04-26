@@ -8,13 +8,15 @@ pipeline {
     stages {
         stage('Terraform Check') {
             steps {
-                sh 'terraform init'
-                sh 'terraform plan'
+                dir('cluster_eks/')
+                    sh 'terraform init'
+                    sh 'terraform plan'
             }
         }
-        stage('User Validation WHO AM I') {
+        stage('Cluster deployment') {
             steps {
-                sh 'whoami'
+                dir('cluster_eks/')
+                    sh 'terraform appl -auto-approve'
             }
         }
     }
