@@ -16,7 +16,7 @@ pipeline {
         stage('Cluster deployment') {
             steps {
                 dir('cluster_eks/')
-                    sh 'terraform appl -auto-approve'
+                    sh 'terraform apply -auto-approve'
             }
         }
     }
