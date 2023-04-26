@@ -9,17 +9,17 @@ pipeline {
         stage('Terraform Check') {
             steps {
                 dir('cluster_eks') {
-                    // sh 'terraform init'
-                    // sh 'terraform plan'
+                    sh 'terraform init'
+                    sh 'terraform plan'
+                }
+            }
+        }
+        stage('Cluster deployment') {
+            steps {
+                dir('cluster_eks'){
                     sh 'pwd'
                 }
             }
         }
-        // stage('Cluster deployment') {
-        //     steps {
-        //         dir('cluster_eks/')
-        //             sh 'terraform apply -auto-approve'
-        //     }
-        // }
     }
 }
